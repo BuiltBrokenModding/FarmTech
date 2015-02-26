@@ -1,0 +1,55 @@
+package com.builtbroken.farmtech.content.machines.incubator;
+
+import com.builtbroken.farmtech.FarmTech;
+import com.builtbroken.mc.prefab.tile.Tile;
+import com.builtbroken.mc.prefab.tile.TileModuleMachine;
+import net.minecraft.block.material.Material;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+
+/**
+ * Created by robert on 2/26/2015.
+ */
+public class TileEggIncubator extends TileModuleMachine
+{
+    protected int[] egg_times;
+    protected static int max_cook_time = 6000;
+
+    public TileEggIncubator()
+    {
+        super("EggIncubator", Material.wood);
+        this.inventory_module = new InvIncubator(this);
+        modules.add(inventory_module);
+        egg_times = new int[this.getSizeInventory()];
+    }
+
+    @Override
+    public void update()
+    {
+        super.update();
+        if(ticks % 3 == 0)
+        {
+            for(int i = 0; i < egg_times.length; i++)
+            {
+                if(getStackInSlot(i) != null && getStackInSlot(i).getItem() == Items.egg)
+                {
+                    egg_times[i] = egg_times[i] + 3;
+                    if(egg_times[i] >= max_cook_time)
+                    {
+                        setInventorySlotContents(0, new ItemStack(FarmTech.itemChicken));
+                    }
+                }
+                else
+                {
+                    egg_times[i] = 0;
+                }
+            }
+        }
+    }
+
+    @Override
+    public Tile newTile()
+    {
+        return new TileEggIncubator();
+    }
+}
