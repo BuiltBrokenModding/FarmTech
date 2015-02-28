@@ -1,16 +1,19 @@
 package com.builtbroken.farmtech.content.machines.incubator;
 
 import com.builtbroken.farmtech.FarmTech;
+import com.builtbroken.mc.api.tile.IGuiTile;
+import com.builtbroken.mc.lib.transform.vector.Pos;
 import com.builtbroken.mc.prefab.tile.Tile;
 import com.builtbroken.mc.prefab.tile.TileModuleMachine;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 /**
  * Created by robert on 2/26/2015.
  */
-public class TileEggIncubator extends TileModuleMachine
+public class TileEggIncubator extends TileModuleMachine implements IGuiTile
 {
     protected int[] egg_times;
     protected static int max_cook_time = 6000;
@@ -48,8 +51,30 @@ public class TileEggIncubator extends TileModuleMachine
     }
 
     @Override
+    protected boolean onPlayerRightClick(EntityPlayer player, int side, Pos hit)
+    {
+        if(isServer())
+        {
+            openGui(player, FarmTech.INSTANCE);
+        }
+        return true;
+    }
+
+    @Override
     public Tile newTile()
     {
         return new TileEggIncubator();
+    }
+
+    @Override
+    public Object getServerGuiElement(int ID, EntityPlayer player)
+    {
+        return new ContainerIncubator(player, this);
+    }
+
+    @Override
+    public Object getClientGuiElement(int ID, EntityPlayer player)
+    {
+        return new GuiIncubator(player, this);
     }
 }

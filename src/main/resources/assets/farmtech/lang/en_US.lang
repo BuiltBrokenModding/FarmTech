@@ -1,5 +1,5 @@
 ## Master language file
-itemGroup.Mining101=Mining 101
+itemGroup.farmtech=Farm Tech
 ## Misc Blocks
-
+item.farmtech:chicken.name=Chicken
 

@@ -1,6 +1,7 @@
 package com.builtbroken.farmtech;
 
 import com.builtbroken.farmtech.content.items.ItemChicken;
+import com.builtbroken.farmtech.content.machines.incubator.TileEggIncubator;
 import com.builtbroken.mc.lib.mod.AbstractMod;
 import com.builtbroken.mc.lib.mod.ModCreativeTab;
 import cpw.mods.fml.common.Mod;
@@ -8,7 +9,10 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraft.block.Block;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 /**
  * Created by robert on 11/18/2014.
@@ -48,6 +52,8 @@ public final class FarmTech extends AbstractMod
 
     public static Item itemChicken;
 
+    public static Block blockEggIncubator;
+
     public FarmTech()
     {
         super(DOMAIN);
@@ -58,9 +64,12 @@ public final class FarmTech extends AbstractMod
     {
         super.preInit(event);
         CREATIVE_TAB = new ModCreativeTab("farmtech");
+        CREATIVE_TAB.itemStack = new ItemStack(Items.feather);
         getManager().setTab(CREATIVE_TAB);
 
         itemChicken = getManager().newItem(ItemChicken.class);
+
+        blockEggIncubator = getManager().newBlock(TileEggIncubator.class);
     }
 
     @Mod.EventHandler
