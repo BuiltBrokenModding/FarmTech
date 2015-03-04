@@ -56,7 +56,7 @@ public final class FarmTech extends AbstractMod
 
     public FarmTech()
     {
-        super(DOMAIN);
+        super(DOMAIN, "FarmTech");
     }
 
     @Mod.EventHandler
