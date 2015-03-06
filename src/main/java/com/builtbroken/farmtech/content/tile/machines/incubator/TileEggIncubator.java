@@ -1,4 +1,4 @@
-package com.builtbroken.farmtech.content.machines.incubator;
+package com.builtbroken.farmtech.content.tile.machines.incubator;
 
 import com.builtbroken.farmtech.FarmTech;
 import com.builtbroken.mc.api.tile.IGuiTile;

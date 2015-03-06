@@ -1,9 +1,7 @@
-package com.builtbroken.farmtech.content.machines.incubator;
+package com.builtbroken.farmtech.content.tile.machines.incubator;
 
 import com.builtbroken.mc.prefab.gui.ContainerBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.ContainerDispenser;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 
 /**

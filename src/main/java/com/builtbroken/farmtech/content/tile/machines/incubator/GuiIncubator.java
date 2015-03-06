@@ -1,4 +1,4 @@
-package com.builtbroken.farmtech.content.machines.incubator;
+package com.builtbroken.farmtech.content.tile.machines.incubator;
 
 import com.builtbroken.mc.prefab.gui.GuiContainerBase;
 import net.minecraft.entity.player.EntityPlayer;

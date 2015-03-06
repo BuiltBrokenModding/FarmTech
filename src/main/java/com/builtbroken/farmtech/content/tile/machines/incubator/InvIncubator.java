@@ -1,10 +1,9 @@
-package com.builtbroken.farmtech.content.machines.incubator;
+package com.builtbroken.farmtech.content.tile.machines.incubator;
 
 import com.builtbroken.mc.api.tile.IInventoryProvider;
 import com.builtbroken.mc.prefab.tile.module.TileModuleInventory;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.util.ForgeDirection;
 
 /**
  * Created by robert on 2/26/2015.

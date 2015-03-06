@@ -1,7 +1,7 @@
 package com.builtbroken.farmtech;
 
 import com.builtbroken.farmtech.content.items.ItemChicken;
-import com.builtbroken.farmtech.content.machines.incubator.TileEggIncubator;
+import com.builtbroken.farmtech.content.tile.machines.incubator.TileEggIncubator;
 import com.builtbroken.mc.lib.mod.AbstractMod;
 import com.builtbroken.mc.lib.mod.ModCreativeTab;
 import cpw.mods.fml.common.Mod;
