@@ -1,6 +1,7 @@
 package com.builtbroken.farmtech;
 
 import com.builtbroken.farmtech.content.items.ItemChicken;
+import com.builtbroken.farmtech.content.items.ItemWateringCan;
 import com.builtbroken.farmtech.content.tile.machines.incubator.TileEggIncubator;
 import com.builtbroken.mc.lib.mod.AbstractMod;
 import com.builtbroken.mc.lib.mod.ModCreativeTab;
@@ -51,6 +52,7 @@ public final class FarmTech extends AbstractMod
     public static ModCreativeTab CREATIVE_TAB;
 
     public static Item itemChicken;
+    public static Item itemWaterCan;
 
     public static Block blockEggIncubator;
 
@@ -68,6 +70,7 @@ public final class FarmTech extends AbstractMod
         getManager().setTab(CREATIVE_TAB);
 
         itemChicken = getManager().newItem(ItemChicken.class);
+        itemWaterCan = getManager().newItem(ItemWateringCan.class);
 
         blockEggIncubator = getManager().newBlock(TileEggIncubator.class);
     }
