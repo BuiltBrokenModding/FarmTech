@@ -6,7 +6,7 @@ package com.builtbroken.farmtech.content.tile;
 public class TileCage
 {
 
-    public static enum Tier
+    public enum Tier
     {
         /* Simple cage that can hold a chicken */
         BASIC,
@@ -15,14 +15,14 @@ public class TileCage
         /** Can support basic water, feed, and collection automation */
         ADVANCED,
         /** Connects to other cages providing food, water, and collecting eggs */
-        INDUSTRIAL;
+        INDUSTRIAL
     }
 
-    public static enum CageMat
+    public enum CageMat
     {
         WOODEN,
         REED,
         IRON,
-        STEEL;
+        STEEL
     }
 }
